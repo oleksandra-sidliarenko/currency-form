@@ -2,14 +2,11 @@
 /*
  * Plugin Name: Currency shortcode
  */
-/**
- * Enqueue scripts and styles.
- */
 class CurrencyShortcode {
      
     public function __construct()
     {
-        $this->access_key = 'e17cd873556cc364e4712292b09d6498'; 
+        $this->access_key = 'API_KEY'; 
         add_action( 'wp_enqueue_scripts', array( $this,'shortcode_scripts' ) );
         add_shortcode( 'Currency', array( $this, 'currency_form' ) );
         add_action( 'wp_ajax_send_ajax', array( $this, 'send_ajax' ) );
